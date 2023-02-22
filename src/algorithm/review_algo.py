@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 13,
    "metadata": {},
    "outputs": [
     {
@@ -11,7 +11,7 @@
        "True"
       ]
      },
-     "execution_count": 3,
+     "execution_count": 13,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -561,18 +561,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "True"
-      ]
-     },
-     "execution_count": 7,
-     "metadata": {},
-     "output_type": "execute_result"
+     "ename": "Error",
+     "evalue": "Session cannot generate requests",
+     "output_type": "error",
+     "traceback": [
+      "Error: Session cannot generate requests",
+      "at w.executeCodeCell (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:301180)",
+      "at w.execute (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:300551)",
+      "at w.start (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:296215)",
+      "at runMicrotasks (<anonymous>)",
+      "at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "at async t.CellExecutionQueue.executeQueuedCells (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:310950)",
+      "at async t.CellExecutionQueue.start (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:310490)"
+     ]
     }
    ],
    "source": [
@@ -597,18 +602,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": null,
    "metadata": {},
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]"
-      ]
-     },
-     "execution_count": 6,
-     "metadata": {},
-     "output_type": "execute_result"
+     "ename": "Error",
+     "evalue": "Session cannot generate requests",
+     "output_type": "error",
+     "traceback": [
+      "Error: Session cannot generate requests",
+      "at w.executeCodeCell (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:301180)",
+      "at w.execute (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:300551)",
+      "at w.start (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:296215)",
+      "at runMicrotasks (<anonymous>)",
+      "at processTicksAndRejections (internal/process/task_queues.js:93:5)",
+      "at async t.CellExecutionQueue.executeQueuedCells (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:310950)",
+      "at async t.CellExecutionQueue.start (/Users/sanghun/.vscode/extensions/ms-toolsai.jupyter-2021.9.1101343141/out/client/extension.js:52:310490)"
+     ]
     }
    ],
    "source": [
@@ -641,137 +651,14 @@
     "arr = [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]]\n",
     "spiralTraverse(arr)"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 5,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]"
-      ]
-     },
-     "execution_count": 5,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "def spiralTraverse2(arr):\n",
-    "    def helper(arr, res, startRow, endRow, startCol, endCol):\n",
-    "        if startRow > endRow or startCol > endCol:\n",
-    "            return\n",
-    "        for col in range(startCol, endCol + 1):\n",
-    "            res.append(arr[startRow][col])\n",
-    "        for row in range(startRow + 1, endRow + 1):\n",
-    "            res.append(arr[row][endCol])\n",
-    "        for col in reversed(range(startCol, endCol)):\n",
-    "            if startRow == endRow:\n",
-    "                break\n",
-    "            res.append(arr[endRow][col])\n",
-    "        for row in reversed(range(startRow+1,endRow)):\n",
-    "            if startCol == endCol:\n",
-    "                break\n",
-    "            res.append(arr[row][startCol])\n",
-    "        helper(arr, res, startRow+1, endRow-1, startCol+1, endCol-1)\n",
-    "\n",
-    "\n",
-    "    res = []\n",
-    "    helper(arr, res, 0, len(arr)-1, 0, len(arr[0])-1)\n",
-    "\n",
-    "    return res\n",
-    "\n",
-    "arr = [[1,2,3,4],[12,13,14,5],[11,16,15,6],[10,9,8,7]]\n",
-    "spiralTraverse2(arr)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 9,
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
-      "4\n"
-     ]
-    }
-   ],
-   "source": [
-    "def findLogestPeak(arr):\n",
-    "\n",
-    "    maxLength = 0\n",
-    "    current = 1\n",
-    "\n",
-    "    while current < len(arr) -1:\n",
-    "        isPeak = arr[current-1] < arr[current] and arr[current] > arr[current+1]\n",
-    "        if not isPeak:\n",
-    "            current += 1 \n",
-    "            continue \n",
-    "        left, right = current-2, current+2\n",
-    "        while left >=0 and arr[left] < arr[left+1]:\n",
-    "            left -= 1\n",
-    "        while right < len(arr) and arr[right] > arr[right-1]:\n",
-    "            right += 1\n",
-    "        maxLength = max(maxLength, right-left-1)\n",
-    "        current = right \n",
-    "    \n",
-    "        \n",
-    "    return maxLength\n",
-    "\n",
-    "arr = [1,2,3,3,4,0,10,6,5,-1,-3,2,3]\n",
-    "print(findLogestPeak(arr))"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 31,
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "[[1, 10]]"
-      ]
-     },
-     "execution_count": 31,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "def mergeOverlappingIntervals(intervals):\n",
-    "    intervals = sorted(intervals,key=lambda x:x[1])\n",
-    "    res = []\n",
-    "    current = intervals[0]\n",
-    "    res.append(current)\n",
-    "\n",
-    "    for i in range(len(intervals)):\n",
-    "        next = intervals[i]\n",
-    "        currentEnd = current[1]\n",
-    "        s, e = next\n",
-    "\n",
-    "        if currentEnd < s:\n",
-    "            current = next\n",
-    "            res.append(current)\n",
-    "        else:\n",
-    "            current[1] = max(currentEnd,e)\n",
-    "    \n",
-    "    return res\n",
-    "\n",
-    "\n",
-    "intervals = [[1,2],[3,5],[4,7],[6,8],[9,10]]\n",
-    "mergeOverlappingIntervals(intervals)"
-   ]
   }
  ],
  "metadata": {
+  "interpreter": {
+   "hash": "aee8b7b246df8f9039afb4144a1f6fd8d2ca17a180786b69acc140d282b71a49"
+  },
   "kernelspec": {
-   "display_name": "Python 3",
-   "language": "python",
+   "display_name": "Python 3.10.8 64-bit",
    "name": "python3"
   },
   "language_info": {
@@ -784,14 +671,9 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.11.2"
+   "version": "3.10.9"
   },
-  "orig_nbformat": 4,
-  "vscode": {
-   "interpreter": {
-    "hash": "aee8b7b246df8f9039afb4144a1f6fd8d2ca17a180786b69acc140d282b71a49"
-   }
-  }
+  "orig_nbformat": 4
  },
  "nbformat": 4,
  "nbformat_minor": 2
